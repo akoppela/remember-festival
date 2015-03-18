@@ -1,0 +1,83 @@
+---
+---
+
+@import "extras"
+@import "colors"
+@import "fonts"
+
+$base: 1.25em
+$baseline: 1rem
+
+$ninesixty_gutter_width: $baseline / 2
+$ninesixty_grid_width: $ninesixty_gutter_width * 96
+$ninesixty_columns: 8
+
+$min_width: 90%
+$max_width: $ninesixty_gutter_width * 140
+$free_space: (100% - $min_width) / 2
+
+html
+  :position relative
+  :min-height 100%
+  :height 100%
+  :background $white url("{{ "/assets/images/backgrounds/main.jpg" | prepend: site.baseurl }}") no-repeat center
+  +background-size(auto calc(100% - #{$baseline * 5}))
+  :font
+    :size $base
+    :family "Georgia", sans-serif
+  :letter-spacing 1px
+  
+html, html a
+  :color $black
+
+*
+  +children-list-fix
+
+*, *:before, *:after
+  +box-sizing
+  +transition(opacity .3s ease-in-out)
+
+$header: $baseline * 2
+$footer: $baseline * 2
+
+body
+  :line-height $baseline
+  :font
+    :size $baseline
+  :height 100%
+  :min-height 100%
+
+#container
+  :height 100%
+  +grid-container
+  
+  > header
+    :height $header
+    
+    > h1
+      :line-height $baseline * 2
+      :text
+        :align center
+      :font
+        :size $baseline * 1.5
+      +colors($black, 0 0 15px rgba(0, 0, 0, 0.5))
+  
+  > #content
+    :height 100%
+    :padding
+      :top $header
+      :bottom $footer
+    :margin
+      :top -$header
+      :bottom -$footer
+  
+  > footer
+    :height $footer
+    
+    > h2
+      :line-height $baseline * 2
+      :text
+        :align center
+      :font
+        :size $baseline * 1.3
+      +colors($black, 0 0 15px rgba(0, 0, 0, 0.5))
