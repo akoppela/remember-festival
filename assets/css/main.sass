@@ -1,0 +1,549 @@
+---
+---
+
+@import "extras"
+@import "colors"
+
+/* fonts
+
+@font-face
+  :font-family "Lato"
+  :font-style normal
+  :font-weight normal
+  :src local("Lato") , url({{"/assets/fonts/Lato-Regular.eot" | prepend: site.baseurl}}) format("oet"), local("Lato"), url({{"/assets/fonts/Lato-Regular.woff" | prepend: site.baseurl}}) format("woff"), local("Lato"), url({{"/assets/fonts/Lato-Regular.ttf" | prepend: site.baseurl}}) format("truetype"), url({{"/assets/fonts/Lato-Regular.svg" | prepend: site.baseurl}}) format('svg')
+
+$base: 1.25em
+$baseline: 1rem
+
+$ninesixty_gutter_width: $baseline / 2
+$ninesixty_grid_width: 100%
+$ninesixty_columns: 8
+
+$min_width: 90%
+$max_width: $ninesixty_gutter_width * 140
+$free_space: (100% - $min_width) / 2
+
+html
+  :position relative
+  :min-height 100%
+  :height 100%
+  :font
+    :size $base
+    :family "Georgia", sans-serif
+  :letter-spacing 1px
+  
+html, html a
+  +colors(#650f7a, 0 1px 2px rgba(255, 255, 255, 0.75))
+
+*
+  +children-list-fix
+
+*, *:before, *:after
+  +box-sizing
+  +transition(opacity .3s ease-in-out)
+
+$header: $baseline * 2
+$footer: $baseline * 2
+
+@-webkit-keyframes closeWindow
+  0%
+    :margin $baseline * 3 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline * 22
+    +opacity(1)
+    :visibility visible
+  
+  50%
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    :visibility hidden
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+    :width $ninesixty_gutter_width * 2
+    :height $baseline
+    +opacity(0)
+
+@keyframes closeWindow
+  0%
+    :margin $baseline * 3 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline * 22
+    +opacity(1)
+    :visibility visible
+  
+  50%
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    :visibility hidden
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+    :width $ninesixty_gutter_width * 2
+    :height $baseline
+    +opacity(0)
+
+@-webkit-keyframes openWindow
+  0%
+    :visibility hidden
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+    :width $ninesixty_gutter_width * 2
+    :height $baseline
+    +opacity(0)
+  
+  50%
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    :margin $baseline * 3 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline * 22
+    +opacity(1)
+    :visibility visible
+
+@keyframes openWindow
+  0%
+    :visibility hidden
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+    :width $ninesixty_gutter_width * 2
+    :height $baseline
+    +opacity(0)
+  
+  50%
+    :margin $baseline * 13.5 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    :margin $baseline * 3 $ninesixty_gutter_width * 4
+    :width $ninesixty_gutter_width * 82
+    :height $baseline * 22
+    +opacity(1)
+    :visibility visible
+
+@-webkit-keyframes fadeIn
+  0%
+    +opacity(0)
+    :visibility hidden
+  
+  100%
+    +opacity(1)
+    :visibility visible
+
+@keyframes fadeIn
+  0%
+    +opacity(0)
+    :visibility hidden
+  
+  100%
+    +opacity(1)
+    :visibility visible
+
+@-webkit-keyframes fadeOut
+  0%
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    +opacity(0)
+    :visibility hidden
+
+@keyframes fadeOut
+  0%
+    +opacity(1)
+    :visibility visible
+  
+  100%
+    +opacity(0)
+    :visibility hidden
+
+body
+  :font
+    :family "BlairMdITC TT", sans-serif
+    :size $baseline
+  :height 100%
+  :min-height 100%
+  +text-shadow(inset 0 -2px 0 rgba(255, 255, 255, 0.5))
+
+#container
+  :line-height $baseline
+  :height 100%
+  :min-height $baseline * 29
+  +grid-container
+  :background $white url("{{ "/assets/images/backgrounds/main.jpg" | prepend: site.baseurl }}") repeat center
+  +background-size($ninesixty_gutter_width * 90 auto)
+  
+  > #content
+    :position relative
+    :width 100%
+    :height 100%
+    :background url("{{ "/assets/images/backgrounds/text.jpg" | prepend: site.baseurl }}") no-repeat center
+    +background-size($ninesixty_gutter_width * 90 auto)
+    
+    > section
+      :position absolute
+      :top 50%
+      :left 50%
+      :margin
+        :left -$ninesixty_gutter_width * 45
+        :top -$baseline * 14
+      :width $ninesixty_gutter_width * 90
+      :height $baseline * 28
+      +children-inline
+      
+      > nav
+        > a
+          :position absolute
+          :z-index 10
+          
+          &.about
+            :width $baseline * 6.5
+            :height $baseline * 1.5
+            :left $baseline * 2
+            :top $baseline * 5.5
+            +rotate(-28)
+            
+            &:hover, &.active
+              & ~ svg #About
+                :fill yellow
+          
+          &.program
+            :width $baseline * 8.5
+            :height $baseline * 1.5
+            :left $baseline * 8.5
+            :top $baseline * 2.3
+            +rotate(-20)
+            
+            &:hover, &.active
+              & ~ svg #Program
+                :fill yellow
+          
+          &.environment
+            :width $baseline * 12
+            :height $baseline * 2
+            :left $baseline * 17.5
+            :top $baseline * 0.5
+            +rotate(0)
+            
+            &:hover, &.active
+              & ~ svg #Environment
+                :fill yellow
+          
+          &.guide
+            :width $baseline * 5.5
+            :height $baseline * 1.5
+            :left $baseline * 30
+            :top $baseline * 2.4
+            +rotate(15)
+            
+            &:hover, &.active
+              & ~ svg #Guide
+                :fill yellow
+          
+          &.tickets
+            :width $baseline * 7
+            :height $baseline * 1.5
+            :left $baseline * 35.5
+            :top $baseline * 5.1
+            +rotate(26)
+            
+            &:hover, &.active
+              & ~ svg #Tickets
+                :fill yellow
+            
+          &.active
+            :cursor default
+         
+        > svg
+          :position absolute
+          :top -$baseline / 2
+          :left 0
+          :width 100%
+          
+          path
+            :fill $white
+        
+          a
+            :position relative
+            :z-index 10
+          
+            &:hover, &.active
+              path
+                :fill yellow
+          
+            &.active
+              :cursor default
+      
+      > .windows
+        :width 100%
+        :height 100%
+        +children-inline
+      
+        > .window-wrapper
+          :width 100%
+          :height 100%
+          
+          > .window
+            :position relative
+            :overflow-x hidden
+            :overflow-y auto
+            :overflow-y overlay
+            :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+            :text-align center
+            :width $ninesixty_gutter_width * 2
+            :height $baseline
+            :border 2px solid rgba(255, 255, 79, 0.5)
+            +box-shadow(inset 0 0 15rem rgba(255, 255, 255, 0.65))
+            +border-radius-top-right($ninesixty_gutter_width * 41 $baseline * 11)
+            +border-radius-top-left($ninesixty_gutter_width * 41 $baseline * 11)
+            +border-radius-bottom-right($ninesixty_gutter_width * 41 $baseline * 11)
+            +border-radius-bottom-left($ninesixty_gutter_width * 41 $baseline * 11)
+            +transition-property(all)
+            :background radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+            :background -o-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+            :background -ms-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+            :background -moz-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+            :background -webkit-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+            +opacity(0)
+            :visibility hidden
+      
+            > div
+              +opacity(0)
+              :visibility hidden
+              :padding $baseline * 2 $ninesixty_gutter_width * 9
+              +transition-property(opacity, visibility)
+      
+              > h1
+                :line-height $baseline * 2
+                :font
+                  :size $baseline * 1.2
+        
+                & + *
+                  :margin
+                    :top $baseline / 2
+      
+              > p
+                :line-height $baseline * 1.5
+                :font-size $baseline * 0.7
+                
+                & + *
+                  :margin
+                    :top $baseline
+              
+              > .arrow
+                :position absolute
+                :top 50%
+                :width $ninesixty_gutter_width * 7
+                :height $baseline * 2
+                :margin
+                  :top -$baseline
+                
+                > a
+                  :position relative
+                  +inline-block
+                  :width $ninesixty_gutter_width * 7
+                  :height $baseline * 2
+                  :padding
+                    :top $baseline * 0.4
+                    :bottom $baseline * 0.4
+                  :line-height $baseline * 0.6
+                  :font
+                    :size $baseline * 0.4
+                  +colors($white, 0 0 5px rgba(0, 0, 0, 1))
+                  +border-radius-top-right($ninesixty_gutter_width * 3.5 $baseline)
+                  +border-radius-top-left($ninesixty_gutter_width * 3.5 $baseline)
+                  +border-radius-bottom-right($ninesixty_gutter_width * 3.5 $baseline)
+                  +border-radius-bottom-left($ninesixty_gutter_width * 3.5 $baseline)
+                  :background no-repeat center
+                  +background-size(110% auto)
+                  :border 2px solid rgba(255, 255, 79, 0.5)
+                  +box-shadow(0 0 2rem rgba(255, 255, 79, 0.5))
+                  +hover-opacity
+                  +transition-property(opacity, -webkit-transform, transform)
+                  +transition-delay
+                
+                  > span
+                    :position relative
+                    :z-index 1
+                
+                  &:before
+                    :content ''
+                    +absoluted
+                    +border-radius-top-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-top-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-bottom-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-bottom-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    :background radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                    :background -o-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                    :background -ms-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                    :background -moz-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                    :background -webkit-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                    +opacity(0.2)
+                
+                  &:hover
+                    +scale(1.1)
+                
+                &.left
+                  :left $ninesixty_gutter_width
+                
+                &.right
+                  :right $ninesixty_gutter_width
+        
+              > ul
+                :position absolute
+                :left 0
+                :top 50%
+                :width 100%
+                :height $baseline * 14
+                :margin
+                  :top -$baseline * 5.5
+                +children-inline
+          
+                > li
+                  :width 50%
+                  :height $baseline * 7
+            
+                  > a
+                    :position relative
+                    +inline-block
+                    :width $ninesixty_gutter_width * 26
+                    :height $baseline * 7
+                    :line-height $baseline * 7
+                    :font
+                      :size $baseline * 0.9
+                    +colors($white, 0 0 5px rgba(0, 0, 0, 1))
+                    +border-radius-top-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-top-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-bottom-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    +border-radius-bottom-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                    :background no-repeat center
+                    +background-size(110% auto)
+                    :border 2px solid rgba(255, 255, 79, 0.5)
+                    +box-shadow(0 0 2rem rgba(255, 255, 79, 0.5))
+                    +hover-opacity
+                    +transition-property(opacity, -webkit-transform, transform)
+                    +transition-delay
+                    
+                    > span
+                      :position relative
+                      :z-index 1
+                    
+                    &:before
+                      :content ''
+                      +absoluted
+                      +border-radius-top-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                      +border-radius-top-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                      +border-radius-bottom-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                      +border-radius-bottom-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                      :background radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                      :background -o-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                      :background -ms-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                      :background -moz-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                      :background -webkit-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                      +opacity(0.2)
+                    
+                    &:hover
+                      +scale(1.1)
+            
+            &::-webkit-scrollbar
+              :position absolute
+              :width $baseline * 4.25
+              :height $baseline * 0.7
+              :background transparent
+
+            &::-webkit-scrollbar-track
+              :width $baseline * 4.25
+              :background transparent
+              :border-left calc(#{$baseline * 0.5} + 1px) solid rgba(255, 255, 79, 0.8)
+              +border-radius($baseline * 0.75)
+              +box-shadow(-1px 0 0 rgba(255, 255, 79, 0.8))
+  
+              &:vertical
+                :margin
+                  :top $baseline * 5
+                  :bottom $baseline * 5
+
+            &::-webkit-scrollbar-thumb
+              :width $baseline
+              :background transparent
+              :border solid rgba(248, 136, 12, 0.85)
+              +border-radius($baseline * 0.75)
+  
+              &:vertical
+                :border
+                  :width 0 0 0 $baseline * 0.5
+
+            &::-webkit-scrollbar-corner, &::-webkit-resizer
+              :display none
+      
+          &.active
+            :visibility visible
+            
+            > .window
+              :-webkit-animation openWindow 0.5s linear
+              :animation openWindow 0.5s linear
+              :-webkit-animation-fill-mode backwards
+              :animation-fill-mode backwards
+              :-webkit-animation-delay 0.8s
+              :animation-delay 0.8s
+              :height $baseline * 22
+              :width $ninesixty_gutter_width * 82
+              :margin $baseline * 3 $ninesixty_gutter_width * 4
+              +opacity(1)
+              :visibility visible
+      
+              > div
+                :-webkit-animation fadeIn 0.3s linear
+                :animation fadeIn 0.3s linear
+                :-webkit-animation-fill-mode backwards
+                :animation-fill-mode backwards
+                :-webkit-animation-delay 1.3s
+                :animation-delay 1.3s
+                +opacity(1)
+                :visibility visible
+      
+          &.hidden
+            :visibility hidden
+            
+            > .window
+              :-webkit-animation closeWindow 0.5s linear
+              :animation closeWindow 0.5s linear
+              :-webkit-animation-delay 0.3s
+              :animation-delay 0.3s
+              :-webkit-animation-fill-mode backwards
+              :animation-fill-mode backwards
+              :margin $baseline * 13.5 $ninesixty_gutter_width * 44
+              :width $ninesixty_gutter_width * 2
+              :height $baseline
+              :visibility hidden
+              +opacity(0)
+      
+              > div
+                :-webkit-animation fadeOut 0.3s linear
+                :animation fadeOut 0.3s linear
+                :-webkit-animation-fill-mode backwards
+                :animation-fill-mode backwards
+                +opacity(0)
+                :visibility hidden
+        
+          & + *
+            :margin
+              :left -100%
+
+@for $i from -40 to 5
+  @media only screen and (max-width: (6 - $i) * 125px)
+    html
+      :font
+        :size (5 - $i) * $base / 8
