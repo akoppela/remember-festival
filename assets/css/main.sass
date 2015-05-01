@@ -39,6 +39,7 @@ html, html a
   +children-list-fix
 
 *, *:before, *:after
+  :outline none
   +box-sizing
   +transition(opacity .3s ease-in-out)
 
@@ -292,8 +293,69 @@ body
         +children-inline
       
         > .window-wrapper
+          :position relative
           :width 100%
           :height 100%
+          
+          > .arrow
+            :position absolute
+            :top 50%
+            :width $ninesixty_gutter_width * 7
+            :height $baseline * 2
+            :margin
+              :top -$baseline
+            :text-align center
+            
+            > a
+              :position relative
+              +inline-block
+              :width $ninesixty_gutter_width * 7
+              :height $baseline * 2
+              :padding
+                :top $baseline * 0.4
+                :bottom $baseline * 0.4
+              :line-height $baseline * 0.6
+              :font
+                :size $baseline * 0.4
+              +colors($white, 0 0 5px rgba(0, 0, 0, 1))
+              +border-radius-top-right($ninesixty_gutter_width * 3.5 $baseline)
+              +border-radius-top-left($ninesixty_gutter_width * 3.5 $baseline)
+              +border-radius-bottom-right($ninesixty_gutter_width * 3.5 $baseline)
+              +border-radius-bottom-left($ninesixty_gutter_width * 3.5 $baseline)
+              :background no-repeat center
+              +background-size(110% auto)
+              :border 2px solid rgba(255, 255, 79, 0.5)
+              +box-shadow(0 0 2rem rgba(255, 255, 79, 0.5))
+              +hover-opacity
+              +transition-property(opacity, -webkit-transform, transform)
+              +transition-delay
+            
+              > span
+                :position relative
+                :z-index 1
+            
+              &:before
+                :content ''
+                +absoluted
+                +border-radius-top-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                +border-radius-top-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                +border-radius-bottom-right($ninesixty_gutter_width * 13 $baseline * 3.5)
+                +border-radius-bottom-left($ninesixty_gutter_width * 13 $baseline * 3.5)
+                :background radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                :background -o-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                :background -ms-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                :background -moz-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                :background -webkit-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
+                +opacity(0.2)
+            
+              &:hover
+                +scale(1.1)
+            
+            &.left
+              :left $ninesixty_gutter_width
+            
+            &.right
+              :right $ninesixty_gutter_width
           
           > .window
             :position relative
@@ -324,6 +386,15 @@ body
               :visibility hidden
               :padding $baseline * 2 $ninesixty_gutter_width * 9
               +transition-property(opacity, visibility)
+              
+              > .form
+                button
+                  :height $baseline * 1.5
+                  +hover-opacity
+                
+                & + *
+                  :margin
+                    :top $baseline * 2
       
               > h1
                 :line-height $baseline * 2
@@ -340,66 +411,7 @@ body
                 
                 & + *
                   :margin
-                    :top $baseline
-              
-              > .arrow
-                :position absolute
-                :top 50%
-                :width $ninesixty_gutter_width * 7
-                :height $baseline * 2
-                :margin
-                  :top -$baseline
-                
-                > a
-                  :position relative
-                  +inline-block
-                  :width $ninesixty_gutter_width * 7
-                  :height $baseline * 2
-                  :padding
-                    :top $baseline * 0.4
-                    :bottom $baseline * 0.4
-                  :line-height $baseline * 0.6
-                  :font
-                    :size $baseline * 0.4
-                  +colors($white, 0 0 5px rgba(0, 0, 0, 1))
-                  +border-radius-top-right($ninesixty_gutter_width * 3.5 $baseline)
-                  +border-radius-top-left($ninesixty_gutter_width * 3.5 $baseline)
-                  +border-radius-bottom-right($ninesixty_gutter_width * 3.5 $baseline)
-                  +border-radius-bottom-left($ninesixty_gutter_width * 3.5 $baseline)
-                  :background no-repeat center
-                  +background-size(110% auto)
-                  :border 2px solid rgba(255, 255, 79, 0.5)
-                  +box-shadow(0 0 2rem rgba(255, 255, 79, 0.5))
-                  +hover-opacity
-                  +transition-property(opacity, -webkit-transform, transform)
-                  +transition-delay
-                
-                  > span
-                    :position relative
-                    :z-index 1
-                
-                  &:before
-                    :content ''
-                    +absoluted
-                    +border-radius-top-right($ninesixty_gutter_width * 13 $baseline * 3.5)
-                    +border-radius-top-left($ninesixty_gutter_width * 13 $baseline * 3.5)
-                    +border-radius-bottom-right($ninesixty_gutter_width * 13 $baseline * 3.5)
-                    +border-radius-bottom-left($ninesixty_gutter_width * 13 $baseline * 3.5)
-                    :background radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
-                    :background -o-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
-                    :background -ms-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
-                    :background -moz-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
-                    :background -webkit-radial-gradient(center center, ellipse contain, rgba(255, 255, 79, 0.85), rgba(248, 136, 12, 0.65))
-                    +opacity(0.2)
-                
-                  &:hover
-                    +scale(1.1)
-                
-                &.left
-                  :left $ninesixty_gutter_width
-                
-                &.right
-                  :right $ninesixty_gutter_width
+                    :top $baseline / 2
         
               > ul
                 :position absolute
@@ -491,6 +503,16 @@ body
           &.active
             :visibility visible
             
+            > .arrow
+              :-webkit-animation fadeIn 0.3s linear
+              :animation fadeIn 0.3s linear
+              :-webkit-animation-fill-mode backwards
+              :animation-fill-mode backwards
+              :-webkit-animation-delay 1.3s
+              :animation-delay 1.3s
+              +opacity(1)
+              :visibility visible
+            
             > .window
               :-webkit-animation openWindow 0.5s linear
               :animation openWindow 0.5s linear
@@ -516,6 +538,14 @@ body
       
           &.hidden
             :visibility hidden
+            
+            > .arrow
+              :-webkit-animation fadeOut 0.3s linear
+              :animation fadeOut 0.3s linear
+              :-webkit-animation-fill-mode backwards
+              :animation-fill-mode backwards
+              +opacity(0)
+              :visibility hidden
             
             > .window
               :-webkit-animation closeWindow 0.5s linear
