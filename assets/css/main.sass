@@ -29,7 +29,7 @@ html
   :height 100%
   :font
     :size $base
-    :family "Georgia", sans-serif
+    :family "BlairMdITC TT", sans-serif
   :letter-spacing 1px
   
 html, html a
@@ -383,9 +383,48 @@ body
               +transition-property(opacity, visibility)
               
               > .form
-                button
-                  :height $baseline * 1.5
-                  +hover-opacity
+                :margin
+                  :top $baseline
+                :font
+                  :family Georgia, sans-serif
+                
+                h3
+                  :display none
+                
+                table
+                  :width 60%
+                  :margin
+                    :top $baseline / 2
+                    :left auto
+                    :right auto
+                  
+                  th, td
+                    :border-top 1px solid rgba(101, 15, 122, 0.25)
+                    :color #650f7a
+                    
+                    &:first-child
+                      :width 60%
+                      
+                      & + th, & + td
+                        :width 20%
+                        
+                        & + th, & + td
+                          :width 5%
+                        
+                          & + th, & + td
+                            :width 15%
+                    
+                  tfoot td
+                    :text-align center
+                    
+                    input[disabled]
+                      :cursor default
+                      +opacity(0.5)
+                
+                .powered a
+                  :margin
+                    :top $baseline / 2
+                  :display block
                 
                 & + *
                   :margin
