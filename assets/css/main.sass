@@ -385,46 +385,7 @@ body
               > .form
                 :margin
                   :top $baseline
-                :font
-                  :family Georgia, sans-serif
-                
-                h3
-                  :display none
-                
-                table
-                  :width 60%
-                  :margin
-                    :top $baseline / 2
-                    :left auto
-                    :right auto
-                  
-                  th, td
-                    :border-top 1px solid rgba(101, 15, 122, 0.25)
-                    :color #650f7a
-                    
-                    &:first-child
-                      :width 60%
-                      
-                      & + th, & + td
-                        :width 20%
-                        
-                        & + th, & + td
-                          :width 5%
-                        
-                          & + th, & + td
-                            :width 15%
-                    
-                  tfoot td
-                    :text-align center
-                    
-                    input[disabled]
-                      :cursor default
-                      +opacity(0.5)
-                
-                .powered a
-                  :margin
-                    :top $baseline / 2
-                  :display block
+                +grid-container(75%)
                 
                 & + *
                   :margin
