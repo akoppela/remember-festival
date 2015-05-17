@@ -6,7 +6,7 @@ layout: default
   {% include navigation.html %}
   <div class="windows">
     <div class="window-wrapper" ng-class="{active: active == 'about', hidden: active != 'about'}">
-      <div class="window about">
+      <div class="window about" id="about">
         <div>
           <h1>Welcome Lovely Friends!</h1>
           <p>Calling you to Remember Festival Journey!</p>
@@ -20,7 +20,7 @@ layout: default
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'program', hidden: active != 'program'}">
-      <div class="window program">
+      <div class="window program" id="program">
         <div>
           <ul>
             <li>
@@ -41,7 +41,7 @@ layout: default
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'program-dance-temple', hidden: active != 'program-dance-temple'}">
-      <div class="window program-dance-temple">
+      <div class="window program-dance-temple" id="program-dance-temple">
         <div>
           <h1>Dance Temple</h1>
           <p>
@@ -115,7 +115,7 @@ layout: default
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'program-chillout-garden', hidden: active != 'program-chillout-garden'}">
-      <div class="window program-chillout-garden">
+      <div class="window program-chillout-garden" id="program-chillout-garden">
         <div>
           <h1>Chillout Garden</h1>
           <p>
@@ -159,7 +159,7 @@ layout: default
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'program-sacred-fire', hidden: active != 'program-sacred-fire'}">
-      <div class="window program-sacred-fire">
+      <div class="window program-sacred-fire" id="program-sacred-fire">
         <div>
           <h1>Sacred Fire</h1>
           <p>It will burn for the whole festival!</p>
@@ -177,21 +177,41 @@ layout: default
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'environment', hidden: active != 'environment'}">
-      <div class="window environment">
+      <div class="window environment" id="environment">
         <div>
           <h1>Coming Soon!</h1>
         </div>
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'guide', hidden: active != 'guide'}">
-      <div class="window guide">
+      <div class="window guide" id="guide">
         <div>
-          <h1>Coming Soon!</h1>
+          <ul>
+            <li>
+              <a href="#/guide-accommodation" ng-click="active = 'guide-accommodation'" style="background-image: url({{"/assets/images/backgrounds/accommodation.jpg" | prepend: site.baseurl}});">
+                <span>Accommodation</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'guide-accommodation', hidden: active != 'guide-accommodation'}">
+      <div class="window guide-accommodation" id="guide-accommodation">
+        <div>
+          <h1>Rooms</h1>
+          <p>Down floor (closer to main dance floor): 600 000 Rp</p>
+          <p>Up floor (closer to chill out and kids area): 700 000 Rp</p>
+          <p>Dormitory room: 50 000 Rp/person</p>
+          <p>
+            Prices are for whole festival (2 days/2 nights)<br/>
+            Please send us a message for booking.
+          </p>
         </div>
       </div>
     </div>
     <div class="window-wrapper" ng-class="{active: active == 'tickets', hidden: active != 'tickets'}">
-      <div class="window tickets">
+      <div class="window tickets" id="tickets">
         <div>
           <h1>
             Tickets for the<br />
