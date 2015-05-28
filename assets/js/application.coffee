@@ -17,6 +17,7 @@ Festa.controller 'Welcome',['$scope', '$location', ($scope, $location)->
     'environment': document.getElementById('environment')
     'guide': document.getElementById('guide')
     'guide-accommodation': document.getElementById('guide-accommodation')
+    'guide-location': document.getElementById('guide-location')
     'tickets': document.getElementById('tickets')
   
   $scope.move = (id, state)-> if !state then contents[id].scrollTop += 100 else contents[id].scrollTop -= 100

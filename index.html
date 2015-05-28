@@ -192,6 +192,11 @@ layout: default
                 <span>Accommodation</span>
               </a>
             </li>
+            <li>
+              <a href="#/guide-location" ng-click="active = 'guide-location'" style="background-image: url({{"/assets/images/backgrounds/location.jpg" | prepend: site.baseurl}});">
+                <span>Location</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -203,8 +208,16 @@ layout: default
             Accommodations<br />
             close to festival place:
           </h1>
-          <p>BMS: 0361783007. 250 000 Rp per night. 9 rooms. 4-5km from partyplace. Located on the big road. Have big garden.</p>
+          <p>BMS: 0361783007. 250 000 Rp per night. 9 rooms. 4-5km from place. Located on the big road. Have big garden.</p>
           <p>Taman Sari: 081916600819/081916600859. 200 000 Rp per night. 4 rooms. 5km from place. Located in the rice fields. Quite place. Have garden.</p>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'guide-location', hidden: active != 'guide-location'}">
+      <div class="window guide-location" id="guide-location">
+        <div>
+          <h1>Location</h1>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15786.575959366035!2d115.1310781!3d-8.4365772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa3af7a1e29809660!2sAir+Panas+Penatahan!5e0!3m2!1sru!2sid!4v1432779957417" width="800" height="400" frameborder="0" style="border:0"></iframe>
         </div>
       </div>
     </div>
