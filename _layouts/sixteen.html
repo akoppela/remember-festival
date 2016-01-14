@@ -8,28 +8,7 @@
 	  	left: 0;
 	  	z-index: 900;
 	  	}
-	.countdown {
-    	margin: 48px auto 24px;
-    	max-width: 780px;
-    	padding: 0 15px;
-    	width: 100%;
-    	position: relative;
-    	z-index: 1000;
-    }
-    
-    .countdown #timer {
-    	background: #2ba8db none repeat scroll 0 0;
-    	border-radius: 25px;
-    	color: #fff;
-    	font-size: 6em;
-    	font-weight: 100;
-    	line-height: 0.55;
-    	margin: 24px auto;
-    	padding: 50px 30px;
-    	text-align: center;
-    	width: 100%;
-    }  	
-	  	
+	
   </style>
   <body ng-controller="Welcome">
     <div id="container">
@@ -39,49 +18,7 @@
     </div>
   </body>
   
-  <script>
-	  /*Document Ready*/////////////////
-$(document).ready(function(e) {
-	
-	/*Countdown
-	*******************************************/
-	$('#timer').countdown('2015/01/15', function(event) {
-    $(this).html(event.strftime('%D:%H:%M:%S'));
-  });
-	
-	/*Features Tabs
-	*******************************************/
-	var $featureTab = $('.feature-tabs .tab');
-	var $featureTabPane = $('.feature-tabs .tabs-pane');
-	$featureTab.on('mouseover', function(){
-		$featureTab.removeClass('active');
-		$(this).addClass('active');
-		var $curTab = $(this).attr('data-tab');
-		$featureTabPane.removeClass('current');
-		$('.feature-tabs .tabs-pane' + $curTab).addClass('current');
-	});
-	
-	/*Subscription Form Widget
-	*******************************************/
-	var $subscrForm = $('.subscr-form');
-	var $nextField = $('.subscr-next');
-	$subscrForm.validate();
-	$nextField.click(function(e){
-		var $target = $(this).parent();
-			if($subscrForm.valid() === true){
-				$target.hide('drop', 300, function(){
-					$target.next().show('drop', 300);
-				});
-			}
-		e.preventDefault();
-	});
-	
-	/*Adding Placeholder Support in Older Browsers
-	************************************************/
-	$('input, textarea').placeholder();
-	
-});
-  </script>
+  
   
   <script>
   	var w = c.width = window.innerWidth,
