@@ -6,7 +6,10 @@
 	  	position: absolute;
 	  	top: 0;
 	  	left: 0;
-	  	z-index: 900;
+	  	}
+	  	
+	  	#jivo-iframe-container {
+		  	display: none !important;
 	  	}
 	
   </style>
@@ -21,7 +24,7 @@
   
   
   <script>
-  	// if you just don't want to read the code but still are interested in how it works, here's a guide for you: http://codepen.io/towc/blog/a-guide-to-wavy-waved-radial-waves/
+	  // if you just don't want to read the code but still are interested in how it works, here's a guide for you: http://codepen.io/towc/blog/a-guide-to-wavy-waved-radial-waves/
 
 var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
@@ -180,5 +183,6 @@ c.addEventListener( 'click', function(e){
 	opts.cx = e.clientX;
 	opts.cy = e.clientY;
 	
-})  </script>
+})
+</script>
 </html>
