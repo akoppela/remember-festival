@@ -1,0 +1,269 @@
+---
+layout: fifteen
+---
+
+<section>
+  {% include navigation.html %}
+  <div class="windows">
+    <div class="window-wrapper" ng-class="{active: active == 'about', hidden: active != 'about'}">
+      <div class="window about" id="about">
+        <div>
+          <h1>Welcome Lovely Friends!</h1>
+          <p>Calling you to Remember Festival Journey!</p>
+          <p>Psy Family Gathering will be hold on 29th - 31th May in stunning Jungles of north Bali.</p>
+          <p>We will be dancing for love and peace, holding the positive vibration of music, people and nature and spreading it to all over the world.</p>
+          <p>We remember and honour beautiful souls who left us already and continue their journeys into other dimensions. This world and space keeps their light and energy.</p>
+          <p>There will be Remember Ceremony before Festival for our brothers and sisters who have passed away.</p>
+          <p>Remember people are created to Dance and to Enjoy!</p>
+          <p>See you on the Dance Floor!</p>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'program', hidden: active != 'program'}">
+      <div class="window program" id="program">
+        <div>
+          <ul>
+            <li>
+              <a href="#/program-dance-temple" ng-click="active = 'program-dance-temple'" style="background-image: url({{"/assets/images/backgrounds/dance_temple.jpg" | prepend: site.baseurl}});">
+                <span>Dance Temple</span>
+              </a>
+            </li><li>
+              <a href="#/program-chillout-garden" ng-click="active = 'program-chillout-garden'" style="background-image: url({{"/assets/images/backgrounds/chillout_garden.jpg" | prepend: site.baseurl}});">
+                <span>Chillout Garden</span>
+              </a>
+            </li><li>
+              <a href="#/program-sacred-fire" ng-click="active = 'program-sacred-fire'" style="background-image: url({{"/assets/images/backgrounds/sacred_fire.jpg" | prepend: site.baseurl}});">
+                <span>Sacred Fire</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'program-dance-temple', hidden: active != 'program-dance-temple'}">
+      <div class="window program-dance-temple" id="program-dance-temple">
+        <div>
+          <h1>Dance Temple</h1>
+          <p>
+            <span>Nanodiversant/Magimatic - Ru - Live</span>
+          </p>
+          <p>
+            <span>Psyonara (Halucination Generation Rec) - Ru</span>
+          </p>
+          <p>
+            <span>Cosmic Sun (SVT Rec) - Ru</span>
+          </p>
+          <p>
+            <span>Gerry (SVT Rec) - Sin</span>
+          </p>
+          <p>
+            <span>3HM (Osirion Rec) - Fr</span>
+          </p>
+          <p>
+            <span>Cabbit (Osirion Rec) - Sin</span>
+          </p>
+          <p>
+            <span>Gaiana (BHS Rec) - Ind/NL - Live</span>
+          </p>
+          <p>
+            <span>Sam - Aus</span>
+          </p>
+          <p>
+            <span>Issam - Bali</span>
+          </p>
+          <p>
+            <span>Nadji - Fr</span>
+          </p>
+          <p>
+            <span>Tom O Rion (Hypnotica Rec) - Ger</span>
+          </p>
+          <p>
+            <span>Patricio - Fr</span>
+          </p>
+          <p>
+            <span>GoaRillaZ - Ger</span>
+          </p>
+          <p>
+            <span>Cristrace (Antu Rec) - Chile</span>
+          </p>
+          <p>
+            <span>Perforator - Ru</span>
+          </p>
+          <p>
+            <span>Cymo (Dragonfly Crew Rec) - Aus</span>
+          </p>
+          <p>
+            <span>Sphinxus - Ru</span>
+          </p>
+          <p>
+            <span>Boots - UK</span>
+          </p>
+          <p>
+            <span>Hare Robot (Electro Ashram Rec) - Ru - Live</span>
+          </p>
+        </div>
+      </div>
+      <div class="arrow left">
+        <a href="#/program-sacred-fire" ng-click="active = 'program-sacred-fire'" style="background-image: url({{"/assets/images/backgrounds/sacred_fire.jpg" | prepend: site.baseurl}});">
+          <span>Sacred<br />Fire</span>
+        </a>
+      </div>
+      <div class="arrow right">
+        <a href="#/program-chillout-garden" ng-click="active = 'program-chillout-garden'" style="background-image: url({{"/assets/images/backgrounds/chillout_garden.jpg" | prepend: site.baseurl}});">
+          <span>Chillout<br />Garden</span>
+        </a>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'program-chillout-garden', hidden: active != 'program-chillout-garden'}">
+      <div class="window program-chillout-garden" id="program-chillout-garden">
+        <div>
+          <h1>Chillout Garden</h1>
+          <p>
+            <span>Magimatic - Ru - Live</span>
+          </p>
+          <p>
+            <span>Cosmic Sun - Ru</span>
+          </p>
+          <p>
+            <span>Gaiana (BHS Rec) - Ind/NL</span>
+          </p>
+          <p>
+            <span>Thierry - Fr</span>
+          </p>
+          <p>
+            <span>GoaRillaZ - Ger</span>
+          </p>
+          <p>
+            <span>Perforator - Ru</span>
+          </p>
+          <p>
+            <span>Sam - Aus</span>
+          </p>
+          <p>
+            <span>Aleceo Kampanella - Ru - Live</span>
+          </p>
+          <p>
+            <span>Cymo (Dragonfly Crew Rec) - Aus</span>
+          </p>
+        </div>
+      </div>
+      <div class="arrow left">
+        <a href="#/program-dance-temple" ng-click="active = 'program-dance-temple'" style="background-image: url({{"/assets/images/backgrounds/dance_temple.jpg" | prepend: site.baseurl}});">
+          <span>Dance Temple</span>
+        </a>
+      </div>
+      <div class="arrow right">
+        <a href="#/program-sacred-fire" ng-click="active = 'program-sacred-fire'" style="background-image: url({{"/assets/images/backgrounds/sacred_fire.jpg" | prepend: site.baseurl}});">
+          <span>Sacred<br />Fire</span>
+        </a>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'program-sacred-fire', hidden: active != 'program-sacred-fire'}">
+      <div class="window program-sacred-fire" id="program-sacred-fire">
+        <div>
+          <h1>Sacred Fire</h1>
+          <p>It will burn for the whole festival!</p>
+        </div>
+      </div>
+      <div class="arrow left">
+        <a href="#/program-chillout-garden" ng-click="active = 'program-chillout-garden'" style="background-image: url({{"/assets/images/backgrounds/chillout_garden.jpg" | prepend: site.baseurl}});">
+          <span>Chillout<br />Garden</span>
+        </a>
+      </div>
+      <div class="arrow right">
+        <a href="#/program-dance-temple" ng-click="active = 'program-dance-temple'" style="background-image: url({{"/assets/images/backgrounds/dance_temple.jpg" | prepend: site.baseurl}});">
+          <span>Dance Temple</span>
+        </a>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'environment', hidden: active != 'environment'}">
+      <div class="window environment" id="environment">
+        <div>
+          <h1>Coming Soon!</h1>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'guide', hidden: active != 'guide'}">
+      <div class="window guide" id="guide">
+        <div>
+          <ul>
+            <li>
+              <a href="#/guide-accommodation" ng-click="active = 'guide-accommodation'" style="background-image: url({{"/assets/images/backgrounds/accommodation.jpg" | prepend: site.baseurl}});">
+                <span>Accommodation</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/guide-location" ng-click="active = 'guide-location'" style="background-image: url({{"/assets/images/backgrounds/location.jpg" | prepend: site.baseurl}});">
+                <span>Location</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'guide-accommodation', hidden: active != 'guide-accommodation'}">
+      <div class="window guide-accommodation" id="guide-accommodation">
+        <div>
+          <h1>
+            Accommodation<br />
+            close to festival place:
+          </h1>
+          <p>BMS: 0361783007. 250 000 Rp per night. 9 rooms. 4-5km from place. Located on the big road. Have big garden.</p>
+          <p>Taman Sari: 081916600819/081916600859. 200 000 Rp per night. 4 rooms. 5km from place. Located in the rice fields. Quite place. Have garden.</p>
+        </div>
+      </div>
+      <div class="arrow right">
+        <a href="#/guide-location" ng-click="active = 'guide-location'" style="background-image: url({{"/assets/images/backgrounds/location.jpg" | prepend: site.baseurl}});">
+          <span>Location</span>
+        </a>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'guide-location', hidden: active != 'guide-location'}">
+      <div class="window guide-location" id="guide-location">
+        <div>
+          <h1>Location</h1>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15786.575959366035!2d115.1310781!3d-8.4365772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa3af7a1e29809660!2sAir+Panas+Penatahan!5e0!3m2!1sru!2sid!4v1432779957417" width="800" height="360" frameborder="0" style="border:0"></iframe>
+        </div>
+      </div>
+      <div class="arrow right">
+        <a href="#/guide-accommodation" ng-click="active = 'guide-accommodation'" style="background-image: url({{"/assets/images/backgrounds/accommodation.jpg" | prepend: site.baseurl}});">
+          <span>
+            Accommo
+            <br />
+            dation
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="window-wrapper" ng-class="{active: active == 'tickets', hidden: active != 'tickets'}">
+      <div class="window tickets" id="tickets">
+        <div>
+          <h1>
+            Tickets for the<br />
+            unforgettable Psy`nature<br />
+            journey
+          </h1>
+          <p>
+            Lets fly high!<br />
+            Buy the tickets on presale to help us to make<br />
+            this Magic Journey the best!
+          </p>
+          <h1>Welcome on board!</h1>
+          <div class="form">
+            <iframe src="//eventbrite.com/tickets-external?eid=16856536354&ref=etckt"
+                    frameborder="0"
+                    height="374"
+                    width="100%"
+                    vspace="0"
+                    hspace="0"
+                    marginheight="5"
+                    marginwidth="5"
+                    scrolling="auto"
+                    allowtransparency="true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

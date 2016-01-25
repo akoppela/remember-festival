@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="7EBrB27EfRUToqNq4zYXClP8sq7dT9TXBzH4aausNWQ" />
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  
+  <script type='text/javascript' src="{{ "/assets/js/angular.min.js" | prepend: site.baseurl }}"></script>
+  <script type='text/javascript' src="{{ "/assets/js/application.js" | prepend: site.baseurl }}"></script>
+  <script type='text/javascript'>
+    (function(){
+      var widget_id = 'WCGncPc1BV';
+      var s = document.createElement('script');
+      s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id;
+      var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);
+    })();
+  </script>
+</head>
