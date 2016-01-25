@@ -98,8 +98,8 @@ h1 {
 }
 
 .animated {
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -110,8 +110,8 @@ h1 {
 }
 
 .animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -122,7 +122,7 @@ h1 {
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: none;
     transform: none;
   }
@@ -136,7 +136,7 @@ h1 {
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: none;
     transform: none;
   }
@@ -156,7 +156,7 @@ h1 {
   }
 
   to {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: none;
     transform: none;
   }
@@ -170,7 +170,7 @@ h1 {
   }
 
   to {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: none;
     transform: none;
   }
